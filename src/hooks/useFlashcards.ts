@@ -1,16 +1,16 @@
 import { useState, useEffect, useCallback } from 'react'
-import type { Flashcard, StudyProgress } from '../components/Flashcard/types'
+import type { FlashcardItem, StudyProgress } from '../components/Flashcard/types'
 
 const STORAGE_KEY = 'ai-learn-flashcard-progress'
 
 interface UseFlashcardsOptions {
   path: string
-  cards: Flashcard[]
+  cards: FlashcardItem[]
 }
 
 interface UseFlashcardsReturn {
   currentIndex: number
-  currentCard: Flashcard
+  currentCard: FlashcardItem
   isFlipped: boolean
   progress: { known: number; review: number; total: number }
   flip: () => void
@@ -24,7 +24,7 @@ interface UseFlashcardsReturn {
 }
 
 export function useFlashcards({ path, cards }: UseFlashcardsOptions): UseFlashcardsReturn {
-  const [shuffledCards, setShuffledCards] = useState<Flashcard[]>(cards)
+  const [shuffledCards, setShuffledCards] = useState<FlashcardItem[]>(cards)
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isFlipped, setIsFlipped] = useState(false)
   const [progress, setProgress] = useState<Record<string, StudyProgress>>({})

@@ -1,4 +1,4 @@
-export interface Flashcard {
+export interface FlashcardItem {
   id: string
   front: string
   back: string
@@ -10,7 +10,7 @@ export interface FlashcardDeck {
   path: string
   title: string
   description: string
-  cards: Flashcard[]
+  cards: FlashcardItem[]
   totalCards: number
 }
 

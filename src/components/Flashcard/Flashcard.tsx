@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import { RotateCcw, Check } from 'lucide-react'
-import type { Flashcard as FlashcardType } from './types'
+import type { FlashcardItem } from './types'
 import './Flashcard.css'
 
 interface FlashcardProps {
-  card: FlashcardType
+  card: FlashcardItem
   onKnown?: () => void
   onReview?: () => void
   showControls?: boolean
