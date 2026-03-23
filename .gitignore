@@ -16,6 +16,9 @@ dist-ssr
 .tmp/
 .tmp
 
+# Debug screenshots
+screenshot*.png
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
