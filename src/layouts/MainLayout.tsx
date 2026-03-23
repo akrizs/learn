@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { BookOpen, Presentation, Layers, Github, SquareStack, FlaskConical } from 'lucide-react'
+import { Cpu, Presentation, Layers, Github, SquareStack, FlaskConical } from 'lucide-react'
 import { useComplexity } from '../context/ComplexityContext'
 import './MainLayout.css'
 
@@ -20,19 +20,19 @@ export default function MainLayout({ children, showNav = true }: MainLayoutProps
         <div className="header-content">
           {showNav && !isHome && (
             <nav className="header-nav">
-              <Link to="/gpt" className={`nav-link ${location.pathname === '/gpt' ? 'active' : ''}`}>
-                <BookOpen size={16} />
-                Learn
+              <Link to="/transformers" className={`nav-link ${location.pathname === '/transformers' ? 'active' : ''}`}>
+                <Cpu size={16} />
+                Transformers
               </Link>
-              <Link to="/gpt/slides" className={`nav-link ${location.pathname.includes('/slides') ? 'active' : ''}`}>
+              <Link to="/transformers/slides" className={`nav-link ${location.pathname.includes('/slides') ? 'active' : ''}`}>
                 <Presentation size={16} />
                 Slides
               </Link>
-              <Link to="/gpt/flashcards" className={`nav-link ${location.pathname.includes('/flashcards') ? 'active' : ''}`}>
+              <Link to="/transformers/flashcards" className={`nav-link ${location.pathname.includes('/flashcards') ? 'active' : ''}`}>
                 <SquareStack size={16} />
                 Flashcards
               </Link>
-              <Link to="/gpt/practice" className={`nav-link ${location.pathname.includes('/practice') ? 'active' : ''}`}>
+              <Link to="/transformers/practice" className={`nav-link ${location.pathname.includes('/practice') ? 'active' : ''}`}>
                 <FlaskConical size={16} />
                 Practice
               </Link>
@@ -53,7 +53,7 @@ export default function MainLayout({ children, showNav = true }: MainLayoutProps
             </button>
 
             <a
-              href="https://github.com/akrizs/ai-infograph"
+              href="https://github.com/akrizs/learn"
               target="_blank"
               rel="noopener noreferrer"
               className="header-github"

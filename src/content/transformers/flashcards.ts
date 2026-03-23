@@ -1,9 +1,9 @@
 import type { FlashcardDeck } from '../../components/Flashcard'
 
-export const GPT_FLASHCARDS: FlashcardDeck = {
-  path: 'gpt',
-  title: 'GPT & LLMs',
-  description: 'Test your knowledge of large language models and AI concepts',
+export const TRANSFORMERS_FLASHCARDS: FlashcardDeck = {
+  path: 'transformers',
+  title: 'Transformers',
+  description: 'Test your knowledge of transformer models and AI concepts',
   totalCards: 15,
   cards: [
     {

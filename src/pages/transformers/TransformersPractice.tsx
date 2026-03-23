@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { FlaskConical, Terminal, Calculator, Pencil, Code, GitBranch, MessageSquare, ArrowRight } from 'lucide-react'
-import './GTPPractice.css'
+import './TransformersPractice.css'
 
 const PRACTICES = [
   {
@@ -8,46 +8,46 @@ const PRACTICES = [
     title: 'API Experiments',
     description: 'Test different prompts and parameters with live API calls',
     section: 'Prompting',
-    path: '/gpt#prompting',
+    path: '/transformers#prompting',
   },
   {
     icon: Calculator,
     title: 'Cost Calculator',
     description: 'Estimate API costs for different models and token volumes',
     section: 'Infrastructure',
-    path: '/gpt#calculator',
+    path: '/transformers#calculator',
   },
   {
     icon: Pencil,
     title: 'Prompt Templates',
     description: 'Learn effective prompting with ready-to-use templates',
     section: 'Prompting',
-    path: '/gpt#prompting',
+    path: '/transformers#prompting',
   },
   {
     icon: Code,
     title: 'Code Generation',
     description: 'Practice with real code completion examples',
     section: 'Code Models',
-    path: '/gpt#code-models',
+    path: '/transformers#code-models',
   },
   {
     icon: GitBranch,
     title: 'RAG Builder',
     description: 'Build a retrieval-augmented generation pipeline step by step',
     section: 'RAG',
-    path: '/gpt#rag',
+    path: '/transformers#rag',
   },
   {
     icon: MessageSquare,
     title: 'Chat History',
     description: 'Understand context management with multi-turn conversations',
     section: 'Memory',
-    path: '/gpt#memory',
+    path: '/transformers#memory',
   },
 ]
 
-export default function GTPPractice() {
+export default function TransformersPractice() {
   return (
     <div className="practice-page">
       <div className="practice-hero">
@@ -69,7 +69,7 @@ export default function GTPPractice() {
           return (
             <a
               key={i}
-              href={`/#${practice.path.replace('/gpt', '')}`}
+              href={`/#${practice.path.replace('/transformers', '')}`}
               className="practice-card"
             >
               <div className="practice-card-header">
@@ -91,7 +91,7 @@ export default function GTPPractice() {
 
       {/* Back Link */}
       <div className="practice-back">
-        <Link to="/gpt" className="back-link">
+        <Link to="/transformers" className="back-link">
           ← Back to Learning
         </Link>
       </div>

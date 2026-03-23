@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom'
 import { Presentation, Clock, Image, FileText } from 'lucide-react'
-import './GPTSlides.css'
+import './TransformersSlides.css'
 
-export default function GPTSlides() {
+export default function TransformersSlides() {
   return (
     <div className="slides-page">
       <div className="slides-hero">
@@ -10,7 +10,7 @@ export default function GPTSlides() {
           <Presentation size={14} />
           Keynote Mode
         </div>
-        <h1>GPT & LLMs Slides</h1>
+        <h1>Transformers Slides</h1>
         <p>
           Transform the learning content into beautiful presentations for teaching,
           team training, or conference talks.
@@ -53,7 +53,7 @@ export default function GPTSlides() {
 
       {/* Back Link */}
       <div className="slides-back">
-        <Link to="/gpt" className="back-link">
+        <Link to="/transformers" className="back-link">
           ← Back to Learning
         </Link>
       </div>

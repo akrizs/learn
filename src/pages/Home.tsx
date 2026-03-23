@@ -4,13 +4,13 @@ import './Home.css'
 
 const TOPICS = [
   {
-    id: 'gpt',
-    title: 'GPT & LLMs',
-    subtitle: 'Large Language Models',
+    id: 'transformers',
+    title: 'Transformers',
+    subtitle: 'GPT / LLM / VLM / MLM',
     icon: Brain,
     color: '#aa3bff',
     description: 'Learn about transformers, tokenization, training, and building with LLMs.',
-    path: '/gpt',
+    path: '/transformers',
     stats: '24 sections',
   },
   {

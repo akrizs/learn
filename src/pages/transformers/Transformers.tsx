@@ -28,16 +28,16 @@ import Glossary from '../../components/Glossary'
 import ScalingLaws from '../../components/ScalingLaws'
 import { useComplexity } from '../../context/ComplexityContext'
 
-export default function GPT() {
+export default function Transformers() {
   const { complexity } = useComplexity()
   const isSimple = complexity === 'simple'
 
   return (
-    <div className="gpt-page">
+    <div className="transformers-page">
       {/* Hero */}
       <header id="hero">
-        <p className="eyebrow">Complete AI Education</p>
-        <h1>Understanding&nbsp;AI&nbsp;&amp;&nbsp;LLMs</h1>
+        <p className="eyebrow">GPT / LLM / VLM / MLM</p>
+        <h1>Understanding&nbsp;Transformers</h1>
         <p className="subtitle">
           {isSimple
             ? 'Learn how AI language models work, from basic concepts to practical applications.'
