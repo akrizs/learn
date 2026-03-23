@@ -45,8 +45,8 @@ An interactive learning platform for understanding AI, LLMs, and machine learnin
 
 ```bash
 # Clone the repository
-git clone https://github.com/akrizs/ai-infograph.git
-cd ai-infograph
+git clone https://github.com/akrizs/learn.git
+cd learn
 
 # Install dependencies
 npm install
