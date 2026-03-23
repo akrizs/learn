@@ -4,6 +4,7 @@ import Home from './pages/Home'
 import GPT from './pages/gpt/GPT'
 import GPTSlides from './pages/gpt/GPTSlides'
 import GPTFlashcards from './pages/gpt/GPTFlashcards'
+import GTPPractice from './pages/gpt/GTPPractice'
 
 export default function App() {
   return (
@@ -13,6 +14,7 @@ export default function App() {
         <Route path="/gpt" element={<GPT />} />
         <Route path="/gpt/slides" element={<GPTSlides />} />
         <Route path="/gpt/flashcards" element={<GPTFlashcards />} />
+        <Route path="/gpt/practice" element={<GTPPractice />} />
       </Routes>
     </MainLayout>
   )

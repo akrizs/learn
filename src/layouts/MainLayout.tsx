@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { BookOpen, Presentation, Layers, Github, SquareStack } from 'lucide-react'
+import { BookOpen, Presentation, Layers, Github, SquareStack, FlaskConical } from 'lucide-react'
 import { useComplexity } from '../context/ComplexityContext'
 import './MainLayout.css'
 
@@ -20,7 +20,7 @@ export default function MainLayout({ children, showNav = true }: MainLayoutProps
         <div className="header-content">
           {showNav && !isHome && (
             <nav className="header-nav">
-              <Link to="/gpt" className={`nav-link ${location.pathname.startsWith('/gpt') && !location.pathname.includes('/slides') && !location.pathname.includes('/flashcards') ? 'active' : ''}`}>
+              <Link to="/gpt" className={`nav-link ${location.pathname === '/gpt' ? 'active' : ''}`}>
                 <BookOpen size={16} />
                 Learn
               </Link>
@@ -31,6 +31,10 @@ export default function MainLayout({ children, showNav = true }: MainLayoutProps
               <Link to="/gpt/flashcards" className={`nav-link ${location.pathname.includes('/flashcards') ? 'active' : ''}`}>
                 <SquareStack size={16} />
                 Flashcards
+              </Link>
+              <Link to="/gpt/practice" className={`nav-link ${location.pathname.includes('/practice') ? 'active' : ''}`}>
+                <FlaskConical size={16} />
+                Practice
               </Link>
             </nav>
           )}
