@@ -75,6 +75,37 @@
   justify-content: space-between;
 }
 
+.osm-card-title-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.osm-card-title-row h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-h);
+  margin: 0;
+}
+
+.osm-hf-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  color: var(--text);
+  opacity: 0.5;
+  transition: all 0.2s;
+}
+
+.osm-hf-link:hover {
+  opacity: 1;
+  color: var(--accent);
+  background: var(--accent-bg);
+}
+
 .osm-card-icon {
   font-size: 24px;
   line-height: 1;

@@ -1,4 +1,4 @@
-import { Globe, Cloud, Server, CheckCircle, XCircle, Brain, Waves, Fish, Gem, Database } from 'lucide-react'
+import { Globe, Cloud, Server, CheckCircle, XCircle, Brain, Waves, Fish, Gem, Database, ExternalLink } from 'lucide-react'
 import './OpenSourceModels.css'
 
 // Provider colors
@@ -20,6 +20,7 @@ interface OpenSourceModel {
   context: number
   strengths: string[]
   icon: React.ReactNode
+  huggingface: string
 }
 
 const OPEN_SOURCE_MODELS: OpenSourceModel[] = [
@@ -31,6 +32,7 @@ const OPEN_SOURCE_MODELS: OpenSourceModel[] = [
     context: 128000,
     strengths: ['Open weights', 'Large context', 'Meta ecosystem'],
     icon: <Brain size={24} />,
+    huggingface: 'https://huggingface.co/meta-llama/Llama-4-Maverick',
   },
   {
     id: 'mistral-large-3',
@@ -40,6 +42,7 @@ const OPEN_SOURCE_MODELS: OpenSourceModel[] = [
     context: 128000,
     strengths: ['Excellent reasoning', 'Fast inference', 'European'],
     icon: <Waves size={24} />,
+    huggingface: 'https://huggingface.co/mistralai/Mistral-Large-Instruct-2506',
   },
   {
     id: 'qwen-3.5',
@@ -49,6 +52,7 @@ const OPEN_SOURCE_MODELS: OpenSourceModel[] = [
     context: 131072,
     strengths: ['Multilingual', 'Strong Chinese', 'Efficient'],
     icon: <Fish size={24} />,
+    huggingface: 'https://huggingface.co/Qwen/Qwen2.5-72B-Instruct',
   },
   {
     id: 'deepseek-v3',
@@ -58,6 +62,7 @@ const OPEN_SOURCE_MODELS: OpenSourceModel[] = [
     context: 128000,
     strengths: ['Efficient architecture', 'Open weights', 'Cost-effective'],
     icon: <Database size={24} />,
+    huggingface: 'https://huggingface.co/deepseek-ai/DeepSeek-V3',
   },
   {
     id: 'gemma-3',
@@ -67,6 +72,7 @@ const OPEN_SOURCE_MODELS: OpenSourceModel[] = [
     context: 128000,
     strengths: ['Lightweight', 'Google integration', 'Fast deployment'],
     icon: <Gem size={24} />,
+    huggingface: 'https://huggingface.co/google/gemma-3-27b-it',
   },
   {
     id: 'phi-4',
@@ -76,6 +82,7 @@ const OPEN_SOURCE_MODELS: OpenSourceModel[] = [
     context: 128000,
     strengths: ['Small but capable', 'Quality-focused', 'Azure integration'],
     icon: <span style={{ fontWeight: 'bold', fontSize: '20px' }}>φ</span>,
+    huggingface: 'https://huggingface.co/microsoft/Phi-4',
   },
 ]
 
@@ -93,7 +100,18 @@ function OpenSourceModelsCards() {
               {model.provider}
             </span>
           </div>
-          <h3>{model.name}</h3>
+          <div className="osm-card-title-row">
+            <h3>{model.name}</h3>
+            <a
+              href={model.huggingface}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="osm-hf-link"
+              title="View on Hugging Face"
+            >
+              <ExternalLink size={14} />
+            </a>
+          </div>
           <div className="osm-card-specs">
             <div className="osm-spec">
               <span className="osm-spec-label">Parameters</span>
