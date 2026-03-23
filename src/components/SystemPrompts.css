@@ -1,0 +1,143 @@
+.system-prompts {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  text-align: left;
+}
+
+/* Best Practices Cards */
+.sp-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 640px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.sp-card {
+  padding: 20px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  transition: all 0.2s;
+
+  &:hover {
+    border-color: var(--accent-border);
+    transform: translateY(-2px);
+  }
+
+  h4 {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-h);
+    margin: 0 0 8px;
+  }
+
+  p {
+    font-size: 13px;
+    color: var(--text);
+    line-height: 1.5;
+    margin: 0;
+  }
+}
+
+/* Interactive Playground */
+.sp-playground {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  background: var(--code-bg);
+}
+
+.sp-header {
+  margin-bottom: 20px;
+
+  h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-h);
+    margin: 0 0 4px;
+  }
+
+  p {
+    font-size: 14px;
+    color: var(--text);
+    margin: 0;
+  }
+}
+
+/* Tabs */
+.sp-tabs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.sp-tab {
+  font-size: 14px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &:hover {
+    background: var(--accent-bg);
+    border-color: var(--accent-border);
+    color: var(--accent);
+  }
+
+  &.active {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: white;
+  }
+}
+
+/* Prompt & Response Boxes */
+.sp-prompt-box,
+.sp-response-box {
+  margin-bottom: 16px;
+}
+
+.sp-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text);
+  opacity: 0.7;
+  margin-bottom: 8px;
+}
+
+.sp-prompt,
+.sp-response {
+  margin: 0;
+  padding: 16px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-family: var(--mono);
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text-h);
+  white-space: pre-wrap;
+  word-break: break-word;
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+.sp-response {
+  background: var(--accent-bg);
+  border-color: var(--accent-border);
+}

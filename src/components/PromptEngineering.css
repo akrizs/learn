@@ -1,0 +1,328 @@
+.prompt-engineering {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  text-align: left;
+}
+
+/* Technique Table */
+.technique-table {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  background: var(--code-bg);
+
+  h3 {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-h);
+    margin: 0 0 16px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+
+  th {
+    text-align: left;
+    font-weight: 600;
+    color: var(--text-h);
+    padding: 10px 12px;
+    border-bottom: 2px solid var(--border);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  td {
+    padding: 12px;
+    color: var(--text);
+    border-bottom: 1px solid var(--border);
+
+    &:first-child {
+      color: var(--text-h);
+      font-weight: 500;
+    }
+  }
+
+  tr:last-child td {
+    border-bottom: none;
+  }
+
+  tr:hover td {
+    background: var(--accent-bg);
+  }
+}
+
+/* Builder */
+.builder {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.builder-header {
+  h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-h);
+    margin: 0 0 4px;
+  }
+
+  p {
+    font-size: 14px;
+    color: var(--text);
+  }
+}
+
+/* Technique Tabs */
+.technique-tabs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.technique-tab {
+  font-size: 14px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &:hover {
+    background: var(--accent-bg);
+    border-color: var(--accent-border);
+    color: var(--accent);
+  }
+
+  &.active {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: white;
+  }
+}
+
+/* Technique Description */
+.technique-description {
+  padding: 12px 16px;
+  background: var(--accent-bg);
+  border: 1px solid var(--accent-border);
+  border-radius: 8px;
+
+  p {
+    font-size: 14px;
+    color: var(--text);
+    margin: 0;
+  }
+}
+
+/* Example Buttons */
+.example-prompts {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.example-label {
+  font-size: 13px;
+  color: var(--text);
+  font-weight: 500;
+}
+
+.example-btn {
+  font-size: 13px;
+  padding: 5px 12px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &:hover {
+    background: var(--accent-bg);
+    border-color: var(--accent-border);
+    color: var(--accent);
+  }
+}
+
+/* Prompt Input */
+.prompt-input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--code-bg);
+  color: var(--text-h);
+  font-family: var(--mono);
+  font-size: 14px;
+  line-height: 1.6;
+  resize: vertical;
+  outline: none;
+  transition: border-color 0.2s;
+
+  &:focus {
+    border-color: var(--accent);
+  }
+
+  &::placeholder {
+    color: var(--text);
+    opacity: 0.6;
+  }
+}
+
+/* Preview */
+.preview-container {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.preview-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 16px;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+
+  span {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text);
+  }
+}
+
+.copy-btn {
+  font-size: 12px;
+  padding: 4px 12px;
+  border-radius: 6px;
+  border: 1px solid var(--accent-border);
+  background: var(--accent-bg);
+  color: var(--accent);
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &:hover {
+    background: var(--accent);
+    color: white;
+  }
+}
+
+.prompt-preview {
+  margin: 0;
+  padding: 16px;
+  background: var(--code-bg);
+  font-family: var(--mono);
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text-h);
+  white-space: pre-wrap;
+  word-break: break-word;
+  min-height: 100px;
+  max-height: 300px;
+  overflow-y: auto;
+
+  &:empty::before {
+    content: 'Your formatted prompt will appear here...';
+    color: var(--text);
+    opacity: 0.5;
+    font-style: italic;
+  }
+}
+
+/* Do's and Don'ts */
+.dos-donts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+
+  @media (max-width: 640px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.dos,
+.donts {
+  padding: 20px;
+  border-radius: 12px;
+
+  h4 {
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0 0 12px;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0 0 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  li {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+}
+
+.dos {
+  background: color-mix(in srgb, #22c55e 8%, transparent);
+  border: 1px solid color-mix(in srgb, #22c55e 30%, transparent);
+
+  h4 {
+    color: #16a34a;
+  }
+
+  li {
+    color: var(--text);
+  }
+}
+
+.donts {
+  background: color-mix(in srgb, #ef4444 8%, transparent);
+  border: 1px solid color-mix(in srgb, #ef4444 30%, transparent);
+
+  h4 {
+    color: #dc2626;
+  }
+
+  li {
+    color: var(--text);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .dos {
+    background: color-mix(in srgb, #22c55e 12%, transparent);
+    border-color: color-mix(in srgb, #22c55e 40%, transparent);
+
+    h4 {
+      color: #4ade80;
+    }
+  }
+
+  .donts {
+    background: color-mix(in srgb, #ef4444 12%, transparent);
+    border-color: color-mix(in srgb, #ef4444 40%, transparent);
+
+    h4 {
+      color: #f87171;
+    }
+  }
+}

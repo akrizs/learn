@@ -1,0 +1,248 @@
+.home {
+  max-width: 1126px;
+  margin: 0 auto;
+  padding: 64px 24px;
+}
+
+/* Hero */
+.home-hero {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: var(--accent-bg);
+  border: 1px solid var(--accent-border);
+  border-radius: 100px;
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 24px;
+}
+
+.home-hero h1 {
+  font-size: 56px;
+  font-weight: 700;
+  color: var(--text-h);
+  margin: 0 0 16px;
+  letter-spacing: -1px;
+}
+
+.hero-subtitle {
+  font-size: 20px;
+  color: var(--text);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Topics */
+.home-topics {
+  margin-bottom: 80px;
+}
+
+.home-topics h2,
+.home-features h2 {
+  font-size: 24px;
+  color: var(--text-h);
+  margin: 0 0 32px;
+  text-align: center;
+}
+
+.topics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.topic-card {
+  display: flex;
+  flex-direction: column;
+  padding: 32px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.topic-card:hover:not(.disabled) {
+  border-color: var(--topic-color);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+}
+
+.topic-card.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.topic-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  background: var(--accent-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--topic-color);
+  margin-bottom: 20px;
+}
+
+.topic-content {
+  flex: 1;
+}
+
+.topic-subtitle {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--topic-color);
+  font-weight: 600;
+}
+
+.topic-content h3 {
+  font-size: 24px;
+  color: var(--text-h);
+  margin: 4px 0 12px;
+}
+
+.topic-content p {
+  font-size: 15px;
+  color: var(--text);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.topic-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+
+.topic-stats {
+  font-size: 13px;
+  color: var(--text);
+  opacity: 0.7;
+}
+
+.topic-arrow {
+  color: var(--topic-color);
+  transition: transform 0.2s;
+}
+
+.topic-card:hover .topic-arrow {
+  transform: translateX(4px);
+}
+
+/* Features */
+.home-features {
+  margin-bottom: 80px;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 768px) {
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.feature-card {
+  padding: 32px;
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  text-align: center;
+}
+
+.feature-icon {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 20px;
+  border-radius: 12px;
+  background: var(--accent-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+}
+
+.feature-card h3 {
+  font-size: 18px;
+  color: var(--text-h);
+  margin: 0 0 12px;
+}
+
+.feature-card p {
+  font-size: 14px;
+  color: var(--text);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* CTA */
+.home-cta {
+  text-align: center;
+  padding: 64px 32px;
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+}
+
+.home-cta h2 {
+  font-size: 32px;
+  color: var(--text-h);
+  margin: 0 0 12px;
+}
+
+.home-cta p {
+  font-size: 18px;
+  color: var(--text);
+  margin: 0 0 32px;
+}
+
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 32px;
+  background: var(--accent);
+  color: white;
+  border-radius: 12px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.cta-button:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .home-hero h1 {
+    font-size: 40px;
+  }
+
+  .hero-subtitle {
+    font-size: 18px;
+  }
+
+  .topics-grid {
+    grid-template-columns: 1fr;
+  }
+}

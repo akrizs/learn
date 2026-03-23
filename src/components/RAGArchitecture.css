@@ -1,0 +1,258 @@
+/* RAG Architecture Component Styles */
+
+/* ── Main container ── */
+.rag-architecture {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* ── Card Grid ── */
+.rag-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+@media (max-width: 768px) {
+  .rag-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+.rag-card {
+  padding: 24px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--code-bg);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.rag-card-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-h);
+  margin: 0;
+}
+
+.rag-card-list {
+  margin: 0;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.rag-card-list li {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text);
+}
+
+/* ── Pipeline Flow ── */
+.rag-pipeline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 24px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--code-bg);
+}
+
+.pipeline-ingestion,
+.pipeline-query,
+.pipeline-generation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.pipeline-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--accent);
+}
+
+.pipeline-row {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.pipeline-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 12px 16px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+  min-width: 100px;
+}
+
+.pipeline-icon {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.pipeline-name {
+  font-size: 12px;
+  color: var(--text);
+  text-align: center;
+}
+
+.pipeline-connector {
+  font-size: 20px;
+  color: var(--accent);
+  font-weight: bold;
+}
+
+/* ── Evaluation Metrics ── */
+.rag-metrics {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.rag-metrics-header h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-h);
+  margin: 0;
+}
+
+.rag-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+@media (max-width: 640px) {
+  .rag-metrics-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.rag-metric {
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--code-bg);
+}
+
+.rag-metric-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 4px;
+}
+
+.rag-metric-desc {
+  font-size: 13px;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+/* ── Key Decisions Table ── */
+.rag-decisions {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.rag-decisions h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-h);
+  margin: 0;
+}
+
+.rag-decisions-table {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.rag-decisions-header,
+.rag-decisions-row {
+  display: grid;
+  grid-template-columns: 1fr 2fr 2fr;
+  gap: 16px;
+  padding: 14px 20px;
+}
+
+.rag-decisions-header {
+  background: var(--accent-bg);
+  border-bottom: 1px solid var(--accent-border);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--accent);
+}
+
+.rag-decisions-row {
+  background: var(--code-bg);
+  border-bottom: 1px solid var(--border);
+}
+
+.rag-decisions-row:last-child {
+  border-bottom: none;
+}
+
+.rag-decisions-decision {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+.rag-decisions-options {
+  font-size: 13px;
+  color: var(--text);
+}
+
+.rag-decisions-tradeoff {
+  font-size: 13px;
+  color: var(--text);
+}
+
+@media (max-width: 640px) {
+  .rag-decisions-header,
+  .rag-decisions-row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .rag-decisions-header {
+    display: none;
+  }
+
+  .rag-decisions-row {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* ── Dark mode support ── */
+@media (prefers-color-scheme: dark) {
+  .rag-card,
+  .rag-pipeline,
+  .rag-metric,
+  .rag-decisions-table {
+    background: var(--code-bg);
+  }
+
+  .pipeline-node {
+    background: var(--bg);
+  }
+}

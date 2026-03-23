@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Equal, MessageSquare, Search, FileText, Database, ChevronRight, Plus } from 'lucide-react'
 import './ContextWindow.css'
 
 type CompactionMethod = 'rolling' | 'summarization' | 'rag' | 'selective' | 'hybrid'
@@ -52,12 +53,12 @@ function SummarizationDiagram() {
           <div className="turn turn-evicted sm">T3</div>
           <div className="turn turn-evicted sm">T4</div>
         </div>
-        <div className="summ-arrow">→</div>
+        <div className="summ-arrow"><ChevronRight size={16} /></div>
         <div className="summ-box">
-          <div className="summ-icon">&#8801;</div>
+          <div className="summ-icon"><Equal size={18} /></div>
           <div className="summ-text">Summary<br/><span>~200 tokens</span></div>
         </div>
-        <div className="summ-arrow">+</div>
+        <div className="summ-arrow"><Plus size={16} /></div>
         <div className="summ-group">
           <div className="turn turn-kept sm">T5</div>
           <div className="turn turn-kept sm">T6</div>
@@ -74,21 +75,21 @@ function RAGDiagram() {
       <div className="diagram-label">At each turn...</div>
       <div className="rag-flow">
         <div className="rag-step">
-          <div className="rag-icon">&#128172;</div>
+          <div className="rag-icon"><MessageSquare size={18} /></div>
           <div className="rag-step-label">User query</div>
         </div>
         <div className="rag-arrow">↓</div>
         <div className="rag-step rag-retrieve">
-          <div className="rag-icon">&#128270;</div>
+          <div className="rag-icon"><Search size={18} /></div>
           <div className="rag-step-label">Retrieve top-k<br/>relevant chunks</div>
         </div>
         <div className="rag-arrow">↓</div>
         <div className="rag-step">
-          <div className="rag-icon">&#128196;</div>
+          <div className="rag-icon"><FileText size={18} /></div>
           <div className="rag-step-label">Inject into<br/>prompt only</div>
         </div>
         <div className="rag-db">
-          <div className="rag-db-icon">&#128452;</div>
+          <div className="rag-db-icon"><Database size={18} /></div>
           <div className="rag-step-label">Vector DB<br/>(external memory)</div>
         </div>
       </div>

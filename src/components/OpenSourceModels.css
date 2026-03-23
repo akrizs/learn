@@ -1,0 +1,345 @@
+.osm {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* ── Intro Section ── */
+.osm-intro {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.osm-tag {
+  display: inline-flex;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--accent);
+  background: var(--accent-bg);
+  padding: 4px 10px;
+  border-radius: 4px;
+  width: fit-content;
+}
+
+.osm-intro h2 {
+  margin: 0;
+}
+
+.osm-intro-text {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text);
+  max-width: 720px;
+}
+
+/* ── Card Grid ── */
+.osm-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.osm-card {
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--code-bg);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: box-shadow 0.2s ease;
+
+  &:hover {
+    box-shadow: var(--shadow);
+  }
+
+  h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-h);
+    margin: 0;
+  }
+}
+
+.osm-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.osm-card-icon {
+  font-size: 24px;
+  line-height: 1;
+}
+
+.osm-provider-badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 4px;
+  background: var(--provider-color);
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.osm-card-specs {
+  display: flex;
+  gap: 16px;
+}
+
+.osm-spec {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.osm-spec-label {
+  font-size: 11px;
+  color: var(--text);
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.osm-spec-value {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-h);
+  font-family: var(--mono);
+}
+
+.osm-card-strengths {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.osm-strength-tag {
+  font-size: 11px;
+  color: var(--accent);
+  background: var(--accent-bg);
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+/* ── Table Section ── */
+.osm-table-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--code-bg);
+
+  h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-h);
+    margin: 0;
+  }
+}
+
+.osm-table-scroll {
+  overflow-x: auto;
+}
+
+.osm-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+
+  th,
+  td {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+  }
+
+  th {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text);
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+
+  td {
+    color: var(--text-h);
+  }
+
+  tbody tr:hover {
+    background: var(--bg);
+  }
+}
+
+.osm-model-name {
+  font-weight: 600;
+}
+
+.osm-params,
+.osm-context {
+  font-family: var(--mono);
+}
+
+.osm-strengths {
+  font-size: 13px;
+  color: var(--text);
+}
+
+/* ── Use Cases ── */
+.osm-use-cases {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-h);
+    margin: 0;
+  }
+}
+
+.osm-use-cases-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.osm-use-case-column {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--code-bg);
+
+  h4 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-h);
+    margin: 0;
+  }
+}
+
+.osm-use-case {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+
+  h5 {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-h);
+    margin: 0 0 2px;
+  }
+
+  p {
+    font-size: 13px;
+    color: var(--text);
+    margin: 0;
+  }
+}
+
+.osm-use-case-icon {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.osm-use-case-open {
+  color: var(--accent);
+}
+
+.osm-use-case-closed {
+  color: var(--text);
+  opacity: 0.6;
+}
+
+/* ── Deployment Options ── */
+.osm-deployment {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-h);
+    margin: 0;
+  }
+}
+
+.osm-deployment-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.osm-deployment-card {
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--code-bg);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.osm-deployment-icon {
+  font-size: 20px;
+  color: var(--accent);
+}
+
+.osm-deployment-card h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-h);
+  margin: 0;
+}
+
+.osm-deployment-options {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+
+  li {
+    font-size: 13px;
+    color: var(--text);
+    background: var(--bg);
+    padding: 4px 10px;
+    border-radius: 4px;
+  }
+}
+
+.osm-deployment-pros {
+  font-size: 13px;
+  color: var(--text);
+  margin: 0;
+}

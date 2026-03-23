@@ -1,0 +1,460 @@
+/* ═══════════════════════════════════════════════════════════════════
+   Transformer Architecture Component Styles
+   ═══════════════════════════════════════════════════════════════════ */
+
+.transformer-architecture {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ── Formula ── */
+.transformer-architecture-formula {
+  padding: 20px 24px;
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.formula-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--text);
+}
+
+.formula {
+  font-family: var(--mono);
+  font-size: 18px;
+  background: transparent;
+  padding: 0;
+  color: var(--text-h);
+
+  sup {
+    font-size: 0.7em;
+    vertical-align: super;
+  }
+
+  sub {
+    font-size: 0.7em;
+    vertical-align: sub;
+  }
+}
+
+.formula-explanation {
+  font-size: 13px;
+  color: var(--text);
+  line-height: 1.5;
+
+  sub {
+    font-size: 0.85em;
+    vertical-align: sub;
+  }
+}
+
+/* ── Attention Visualization ── */
+.transformer-architecture-visual {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.visual-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--text);
+}
+
+.attention-demo {
+  padding: 20px 24px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.attention-instruction {
+  font-size: 14px;
+  color: var(--text);
+  margin: 0;
+}
+
+.attention-tokens {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.attention-token {
+  padding: 10px 18px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--code-bg);
+  color: var(--text-h);
+  font-family: var(--mono);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.attention-token:hover {
+  border-color: var(--accent-border);
+  background: var(--accent-bg);
+}
+
+.attention-token.active {
+  background: var(--accent-bg);
+  border-color: var(--accent);
+  color: var(--accent);
+  box-shadow: 0 0 0 2px var(--accent-border);
+}
+
+/* Attention Heatmap */
+.attention-heatmap {
+  padding: 16px;
+  background: rgba(170, 59, 255, 0.05);
+  border-radius: 8px;
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.heatmap-label {
+  font-size: 13px;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.heatmap-label strong {
+  color: var(--accent);
+}
+
+.heatmap-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.heatmap-row {
+  display: grid;
+  grid-template-columns: 60px 1fr 45px;
+  align-items: center;
+  gap: 12px;
+}
+
+.heatmap-token {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--text-h);
+  font-weight: 500;
+}
+
+.heatmap-bar-container {
+  height: 20px;
+  background: var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.heatmap-bar {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.3s ease;
+  min-width: 4px;
+}
+
+.heatmap-value {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--text);
+  text-align: right;
+}
+
+/* Attention Matrix */
+.attention-matrix {
+  padding: 16px;
+  background: var(--code-bg);
+  border-radius: 8px;
+}
+
+.matrix-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.matrix-grid {
+  display: grid;
+  grid-template-columns: 50px repeat(4, 1fr);
+  gap: 2px;
+  max-width: 400px;
+}
+
+.matrix-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-family: var(--mono);
+  padding: 6px 4px;
+  border-radius: 4px;
+  transition: all 0.15s ease;
+}
+
+.matrix-header-corner {
+  background: transparent;
+}
+
+.matrix-header {
+  background: var(--border);
+  color: var(--text-h);
+  font-weight: 600;
+  font-size: 10px;
+}
+
+.matrix-row-header {
+  background: var(--border);
+  color: var(--text-h);
+  font-weight: 600;
+  font-size: 10px;
+  justify-content: flex-end;
+  padding-right: 8px;
+}
+
+.matrix-data {
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.matrix-data:hover {
+  transform: scale(1.05);
+  z-index: 1;
+}
+
+.matrix-data.active-row {
+  box-shadow: inset 0 0 0 2px var(--accent);
+}
+
+.qkvl-explanation {
+  font-size: 12px;
+  color: var(--text);
+  line-height: 1.6;
+  margin: 0;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+.qkvl-explanation strong {
+  color: var(--text-h);
+}
+
+/* ── Architecture Comparison ── */
+.transformer-architecture-comparison {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.comparison-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--text);
+}
+
+.arch-diagrams {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+
+  @media (max-width: 640px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.arch-item {
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.arch-diagram {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.arch-block {
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  font-family: var(--mono);
+  background: color-mix(in srgb, var(--accent) 20%, transparent);
+  color: var(--accent);
+  border: 1px solid var(--accent-border);
+
+  &.enc {
+    background: color-mix(in srgb, #3b82f6 20%, transparent);
+    color: #3b82f6;
+    border-color: color-mix(in srgb, #3b82f6 50%, transparent);
+  }
+
+  &.dec {
+    background: color-mix(in srgb, #f97316 20%, transparent);
+    color: #f97316;
+    border-color: color-mix(in srgb, #f97316 50%, transparent);
+  }
+}
+
+.arch-cross {
+  color: var(--text);
+  font-size: 14px;
+  padding: 0 4px;
+}
+
+.arch-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+
+  strong {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-h);
+  }
+
+  span {
+    font-size: 12px;
+    color: var(--text);
+  }
+}
+
+/* ── Concept Cards ── */
+.transformer-architecture-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.transformer-architecture-card {
+  padding: 24px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--code-bg);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  cursor: default;
+
+  &:hover {
+    border-color: var(--accent-border);
+    box-shadow: var(--shadow);
+  }
+
+  &.hovered {
+    border-color: var(--accent);
+    background: color-mix(in srgb, var(--accent-bg) 50%, var(--code-bg));
+  }
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-h);
+    margin: 0;
+  }
+}
+
+.card-icon {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.card-description {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text);
+  margin: 0;
+}
+
+.card-details {
+  margin: 0;
+  padding: 12px 0 0 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  border-top: 1px solid var(--border);
+  animation: fadeIn 0.2s ease-out;
+
+  li {
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--text);
+    position: relative;
+  }
+}
+
+/* ── Dark Mode ── */
+@media (prefers-color-scheme: dark) {
+  .formula {
+    color: var(--text-h);
+  }
+
+  .arch-block.enc {
+    background: color-mix(in srgb, #60a5fa 15%, transparent);
+  }
+
+  .arch-block.dec {
+    background: color-mix(in srgb, #fb923c 15%, transparent);
+  }
+
+  .attention-heatmap {
+    background: rgba(170, 59, 255, 0.1);
+  }
+
+  .attention-token.active {
+    background: color-mix(in srgb, var(--accent) 20%, transparent);
+  }
+
+  .matrix-cell {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  }
+}

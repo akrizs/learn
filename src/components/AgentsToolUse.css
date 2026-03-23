@@ -1,0 +1,317 @@
+.agents-tool-use-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* ── Sub-heading ── */
+.atu-sub-heading {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-h);
+  margin: 0 0 16px;
+}
+
+/* ── Concept Cards ── */
+.atu-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.atu-card {
+  padding: 24px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--code-bg);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-h);
+    margin: 0;
+  }
+
+  p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--text);
+    margin: 0;
+  }
+}
+
+.atu-card-icon {
+  font-size: 24px;
+  line-height: 1;
+}
+
+.atu-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: auto;
+  padding-top: 8px;
+}
+
+.atu-tag {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 12px;
+  background: var(--accent-bg);
+  border: 1px solid var(--accent-border);
+  color: var(--accent);
+}
+
+/* ── Agent Loop Diagram ── */
+.atu-loop-section {
+  padding: 24px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--code-bg);
+}
+
+.atu-loop-diagram {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  gap: 0;
+  margin: 16px 0;
+}
+
+.atu-loop-step {
+  display: flex;
+  align-items: center;
+}
+
+.atu-loop-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 16px 20px;
+  border: 2px solid var(--accent-border);
+  border-radius: 10px;
+  background: var(--accent-bg);
+  min-width: 100px;
+  text-align: center;
+}
+
+.atu-loop-icon {
+  font-size: 24px;
+  line-height: 1;
+}
+
+.atu-loop-label {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.atu-loop-desc {
+  font-size: 11px;
+  color: var(--text);
+  max-width: 80px;
+}
+
+.atu-loop-arrow {
+  font-size: 24px;
+  color: var(--accent);
+  padding: 0 12px;
+}
+
+.atu-loop-note {
+  font-size: 13px;
+  color: var(--text);
+  text-align: center;
+  font-style: italic;
+}
+
+/* ── Demo Section ── */
+.atu-demo-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.atu-demo-intro {
+  font-size: 14px;
+  color: var(--text);
+  margin: -8px 0 16px;
+}
+
+.atu-demo-tabs {
+  display: flex;
+  gap: 0;
+  border: 1px solid var(--border);
+  border-bottom: none;
+  border-radius: 10px 10px 0 0;
+  overflow: hidden;
+  background: var(--code-bg);
+}
+
+.atu-demo-tab {
+  flex: 1;
+  padding: 12px 16px;
+  border: none;
+  border-right: 1px solid var(--border);
+  background: transparent;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  cursor: pointer;
+  transition: all 0.15s;
+
+  &:last-child {
+    border-right: none;
+  }
+
+  &:hover {
+    background: var(--accent-bg);
+  }
+
+  &.active {
+    background: var(--accent-bg);
+    color: var(--accent);
+    border-bottom: 2px solid var(--accent);
+  }
+}
+
+.atu-demo-panels {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border: 1px solid var(--border);
+  border-radius: 0 0 10px 10px;
+  overflow: hidden;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.atu-demo-panel {
+  padding: 20px;
+  background: var(--code-bg);
+
+  &:first-child {
+    border-right: 1px solid var(--border);
+
+    @media (max-width: 768px) {
+      border-right: none;
+      border-bottom: 1px solid var(--border);
+    }
+  }
+}
+
+.atu-panel-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+
+/* ── Code Blocks ── */
+.atu-code-block {
+  font-family: var(--mono);
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text-h);
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px;
+  overflow-x: auto;
+  margin: 0;
+  white-space: pre;
+}
+
+.atu-code-large {
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* ── Example Section ── */
+.atu-example-section {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Examples Grid ── */
+.atu-examples-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.atu-examples-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+
+  @media (max-width: 640px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.atu-example-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 18px 20px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--code-bg);
+
+  strong {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-h);
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  p {
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--text);
+    margin: 0;
+  }
+}
+
+.atu-example-icon {
+  font-size: 24px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+/* ── Dark mode adjustments ── */
+@media (prefers-color-scheme: dark) {
+  .atu-card {
+    background: color-mix(in srgb, var(--code-bg) 80%, transparent);
+  }
+
+  .atu-loop-section {
+    background: color-mix(in srgb, var(--code-bg) 80%, transparent);
+  }
+
+  .atu-demo-tabs {
+    background: color-mix(in srgb, var(--code-bg) 80%, transparent);
+  }
+
+  .atu-demo-panel {
+    background: color-mix(in srgb, var(--code-bg) 80%, transparent);
+  }
+
+  .atu-example-item {
+    background: color-mix(in srgb, var(--code-bg) 80%, transparent);
+  }
+}

@@ -1,0 +1,257 @@
+.llm-limitations {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* ── Limitation Cards ── */
+.limitation-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.limitation-card {
+  padding: 24px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--code-bg);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.limitation-card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.limitation-card-icon {
+  font-size: 20px;
+  line-height: 1;
+}
+
+.limitation-card-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-h);
+  margin: 0;
+  flex: 1;
+}
+
+.limitation-card-desc {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text);
+  margin: 0;
+}
+
+.limitation-card-sections {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+
+  @media (max-width: 640px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.limitation-section {
+  h4 {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--accent);
+    margin: 0 0 8px;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0 0 0 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  li {
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--text);
+  }
+}
+
+/* ── Severity Badge ── */
+.limitation-severity {
+  display: inline-flex;
+  align-items: center;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.limitation-severity-high {
+  background: color-mix(in srgb, #ef4444 12%, transparent);
+  border: 1px solid color-mix(in srgb, #ef4444 30%, transparent);
+  color: #dc2626;
+}
+
+.limitation-severity-medium {
+  background: color-mix(in srgb, #eab308 12%, transparent);
+  border: 1px solid color-mix(in srgb, #eab308 30%, transparent);
+  color: #a16207;
+}
+
+.limitation-severity-low {
+  background: color-mix(in srgb, #22c55e 12%, transparent);
+  border: 1px solid color-mix(in srgb, #22c55e 30%, transparent);
+  color: #16a34a;
+}
+
+/* ── Comparison Table ── */
+.limitation-table {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  background: var(--code-bg);
+
+  h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-h);
+    margin: 0 0 16px;
+  }
+}
+
+.limitation-table-scroll {
+  overflow-x: auto;
+}
+
+.limitation-table table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.limitation-table thead {
+  border-bottom: 2px solid var(--border);
+}
+
+.limitation-table th {
+  text-align: left;
+  font-weight: 600;
+  color: var(--text);
+  padding: 12px 16px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.limitation-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+  vertical-align: top;
+
+  &:first-child {
+    color: var(--text-h);
+    font-weight: 500;
+  }
+}
+
+.limitation-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.limitation-table tbody tr:hover td {
+  background: var(--accent-bg);
+}
+
+/* ── Mitigation Tags ── */
+.mitigation-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.mitigation-tag {
+  display: inline-flex;
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 16px;
+  background: var(--accent-bg);
+  border: 1px solid var(--accent-border);
+  color: var(--accent);
+  font-weight: 500;
+}
+
+/* ── Key Insight ── */
+.limitation-insight {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 20px 24px;
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--accent) 8%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);
+}
+
+.insight-icon {
+  font-size: 24px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.insight-content {
+  h4 {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 0 0 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--text);
+    margin: 0;
+  }
+}
+
+/* ── Dark Mode ── */
+@media (prefers-color-scheme: dark) {
+  .limitation-severity-high {
+    background: color-mix(in srgb, #f87171 15%, transparent);
+    border-color: color-mix(in srgb, #f87171 40%, transparent);
+    color: #f87171;
+  }
+
+  .limitation-severity-medium {
+    background: color-mix(in srgb, #facc15 15%, transparent);
+    border-color: color-mix(in srgb, #facc15 40%, transparent);
+    color: #facc15;
+  }
+
+  .limitation-severity-low {
+    background: color-mix(in srgb, #4ade80 15%, transparent);
+    border-color: color-mix(in srgb, #4ade80 40%, transparent);
+    color: #4ade80;
+  }
+
+  .limitation-insight {
+    background: color-mix(in srgb, var(--accent) 12%, transparent);
+    border-color: color-mix(in srgb, var(--accent) 35%, transparent);
+  }
+}

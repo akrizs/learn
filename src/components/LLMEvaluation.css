@@ -1,0 +1,492 @@
+.llm-evaluation {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* ── Card Grid ── */
+.llm-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.llm-card {
+  padding: 24px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--code-bg);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-h);
+    margin: 0;
+  }
+}
+
+.llm-card-icon {
+  font-size: 18px;
+  color: var(--accent);
+  line-height: 1;
+}
+
+.llm-card-desc {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text);
+  margin: 0;
+}
+
+.llm-card-subjects {
+  font-size: 12px;
+  color: var(--accent);
+  font-weight: 500;
+  margin: 0;
+}
+
+/* ── Mentions ── */
+.llm-mentions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding: 16px 20px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--code-bg);
+}
+
+.llm-mention-label {
+  font-size: 13px;
+  color: var(--text);
+  font-weight: 500;
+}
+
+.llm-mention-tag {
+  font-size: 12px;
+  padding: 3px 10px;
+  border-radius: 12px;
+  border: 1px solid var(--accent-border);
+  background: var(--accent-bg);
+  color: var(--accent);
+  font-weight: 500;
+}
+
+/* ── Visualizer ── */
+.llm-visualizer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--code-bg);
+
+  h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-h);
+    margin: 0;
+  }
+}
+
+.llm-visualizer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.llm-benchmark-select {
+  font-size: 14px;
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--text-h);
+  cursor: pointer;
+  min-width: 280px;
+
+  &:focus {
+    outline: none;
+    border-color: var(--accent);
+  }
+}
+
+/* ── Provider Filters ── */
+.llm-provider-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.llm-provider-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  padding: 5px 12px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+  transition: all 0.2s;
+
+  .llm-provider-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--border);
+    transition: background 0.2s;
+    flex-shrink: 0;
+  }
+
+  &:hover {
+    border-color: var(--provider-color);
+    color: var(--text-h);
+  }
+
+  &.active {
+    border-color: var(--provider-color);
+    background: color-mix(in srgb, var(--provider-color) 12%, transparent);
+    color: var(--text-h);
+
+    .llm-provider-dot {
+      background: var(--provider-color);
+    }
+  }
+}
+
+/* ── Table ── */
+.llm-table-scroll {
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.llm-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+
+  thead {
+    border-bottom: 1px solid var(--border);
+    background: var(--bg);
+  }
+
+  th {
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: var(--text);
+    white-space: nowrap;
+  }
+
+  td {
+    padding: 11px 16px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-h);
+    white-space: nowrap;
+  }
+
+  tbody tr:last-child td {
+    border-bottom: none;
+  }
+
+  tbody tr:hover td {
+    background: var(--accent-bg);
+  }
+}
+
+.llm-sortable {
+  cursor: pointer;
+  user-select: none;
+
+  &:hover {
+    color: var(--text-h);
+  }
+}
+
+.llm-sort-icon {
+  margin-left: 4px;
+  color: var(--accent);
+}
+
+.llm-sort-icon-idle {
+  color: var(--border);
+}
+
+.llm-model-name {
+  font-weight: 500;
+}
+
+.llm-provider-badge {
+  display: inline-block;
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: 12px;
+  border: 1px solid color-mix(in srgb, var(--provider-color) 40%, transparent);
+  background: color-mix(in srgb, var(--provider-color) 12%, transparent);
+  color: var(--provider-color);
+  white-space: nowrap;
+}
+
+.llm-score-cell {
+  font-family: var(--mono);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* ── Performance Bar ── */
+.llm-performance-bar {
+  width: 100px;
+  height: 8px;
+  background: var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.llm-performance-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.llm-performance-excellent {
+  background: #22c55e;
+}
+
+.llm-performance-good {
+  background: #eab308;
+}
+
+.llm-performance-needs-improvement {
+  background: #ef4444;
+}
+
+/* ── Legend ── */
+.llm-legend {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  font-size: 12px;
+  color: var(--text);
+}
+
+.llm-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.llm-legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.llm-legend-excellent {
+  background: #22c55e;
+}
+
+.llm-legend-good {
+  background: #eab308;
+}
+
+.llm-legend-needs {
+  background: #ef4444;
+}
+
+/* ── Chart Section ── */
+.llm-chart-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-h);
+    margin: 0;
+  }
+}
+
+.llm-chart {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 24px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--code-bg);
+}
+
+.llm-chart-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.llm-chart-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-h);
+  min-width: 140px;
+  white-space: nowrap;
+}
+
+.llm-chart-bar-wrap {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.llm-chart-bar {
+  height: 20px;
+  border-radius: 4px;
+  min-width: 4px;
+  transition: width 0.3s ease;
+}
+
+.llm-chart-excellent {
+  background: #22c55e;
+}
+
+.llm-chart-good {
+  background: #eab308;
+}
+
+.llm-chart-needs-improvement {
+  background: #ef4444;
+}
+
+.llm-chart-value {
+  font-size: 13px;
+  font-family: var(--mono);
+  color: var(--text);
+  min-width: 48px;
+}
+
+/* ── Provider Comparison ── */
+.llm-provider-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-h);
+    margin: 0;
+  }
+}
+
+.llm-provider-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
+}
+
+.llm-provider-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 20px 16px;
+  border-radius: 12px;
+  border: 2px solid;
+  text-align: center;
+
+  &.llm-provider-card-excellent {
+    border-color: #22c55e;
+    background: color-mix(in srgb, #22c55e 8%, transparent);
+  }
+
+  &.llm-provider-card-good {
+    border-color: #eab308;
+    background: color-mix(in srgb, #eab308 8%, transparent);
+  }
+
+  &.llm-provider-card-needs-improvement {
+    border-color: #ef4444;
+    background: color-mix(in srgb, #ef4444 8%, transparent);
+  }
+}
+
+.llm-provider-card-badge {
+  display: inline-block;
+  font-size: 12px;
+  padding: 2px 10px;
+  border-radius: 12px;
+  border: 1px solid color-mix(in srgb, var(--provider-color) 40%, transparent);
+  background: color-mix(in srgb, var(--provider-color) 12%, transparent);
+  color: var(--provider-color);
+  font-weight: 500;
+}
+
+.llm-provider-card-score {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-h);
+  font-family: var(--mono);
+}
+
+.llm-provider-card-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text);
+}
+
+/* ── Dark Mode ── */
+@media (prefers-color-scheme: dark) {
+  .llm-performance-excellent {
+    background: #4ade80;
+  }
+
+  .llm-performance-good {
+    background: #facc15;
+  }
+
+  .llm-performance-needs-improvement {
+    background: #f87171;
+  }
+
+  .llm-chart-excellent {
+    background: #4ade80;
+  }
+
+  .llm-chart-good {
+    background: #facc15;
+  }
+
+  .llm-chart-needs-improvement {
+    background: #f87171;
+  }
+
+  .llm-provider-card-excellent {
+    background: color-mix(in srgb, #4ade80 10%, transparent);
+  }
+
+  .llm-provider-card-good {
+    background: color-mix(in srgb, #facc15 10%, transparent);
+  }
+
+  .llm-provider-card-needs-improvement {
+    background: color-mix(in srgb, #f87171 10%, transparent);
+  }
+}

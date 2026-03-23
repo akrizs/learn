@@ -1,0 +1,389 @@
+/* Streaming Responses Component Styles */
+
+/* ── Main container ── */
+.streaming-responses {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* ── Concept Cards ── */
+.streaming-concepts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+@media (max-width: 768px) {
+  .streaming-concepts {
+    grid-template-columns: 1fr;
+  }
+}
+
+.streaming-card {
+  padding: 24px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--code-bg);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.streaming-card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.streaming-card-icon {
+  font-size: 20px;
+  line-height: 1;
+}
+
+.streaming-card-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-h);
+  margin: 0;
+}
+
+.streaming-card-list {
+  margin: 0;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.streaming-card-list li {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text);
+}
+
+/* ── Streaming Demo ── */
+.streaming-demo {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--code-bg);
+}
+
+.demo-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+}
+
+.demo-header h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-h);
+  margin: 0;
+}
+
+.demo-toggle {
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: 1px solid var(--accent);
+  background: transparent;
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.demo-toggle:hover {
+  background: var(--accent);
+  color: white;
+}
+
+.demo-placeholder {
+  padding: 60px 20px;
+  text-align: center;
+  color: var(--text);
+  font-size: 14px;
+  background: var(--bg);
+}
+
+.demo-comparison {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--border);
+}
+
+@media (max-width: 640px) {
+  .demo-comparison {
+    grid-template-columns: 1fr;
+  }
+}
+
+.demo-panel {
+  background: var(--code-bg);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.demo-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.demo-label {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text);
+}
+
+.streaming-badge {
+  color: var(--accent);
+}
+
+.demo-timer {
+  font-size: 13px;
+  font-family: var(--mono);
+  color: var(--text);
+}
+
+.demo-response {
+  min-height: 120px;
+  padding: 16px;
+  border-radius: 8px;
+  background: var(--bg);
+  display: flex;
+  align-items: flex-start;
+}
+
+.response-text {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+.response-loading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.loading-dot {
+  font-size: 8px;
+  color: var(--text);
+  animation: pulse 1.4s infinite ease-in-out;
+}
+
+.loading-dot:nth-child(1) { animation-delay: 0s; }
+.loading-dot:nth-child(2) { animation-delay: 0.2s; }
+.loading-dot:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes pulse {
+  0%, 80%, 100% { opacity: 0.3; }
+  40% { opacity: 1; }
+}
+
+.loading-text {
+  font-size: 13px;
+  color: var(--text);
+}
+
+/* Cursor blink for streaming */
+.cursor {
+  display: inline-block;
+  margin-left: 2px;
+  color: var(--accent);
+  animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+/* Progress bar */
+.demo-progress {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.progress-bar {
+  height: 6px;
+  background: var(--border);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: var(--accent);
+  border-radius: 3px;
+  transition: width 0.1s ease-out;
+}
+
+.progress-label {
+  font-size: 11px;
+  color: var(--text);
+  text-align: right;
+}
+
+/* Demo insight */
+.demo-insight {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  border-top: 1px solid var(--border);
+  background: var(--bg);
+}
+
+@media (max-width: 640px) {
+  .demo-insight {
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+  }
+}
+
+.insight-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.insight-label {
+  font-size: 11px;
+  color: var(--text);
+}
+
+.insight-value {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+/* ── Timing Visualization ── */
+.timing-viz {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  background: var(--code-bg);
+}
+
+.timing-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-h);
+  margin: 0 0 20px 0;
+}
+
+.timing-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: relative;
+  padding-left: 24px;
+}
+
+/* Vertical line */
+.timing-timeline::before {
+  content: '';
+  position: absolute;
+  left: 7px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background: var(--border);
+}
+
+.timeline-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 12px 0;
+  position: relative;
+}
+
+.timeline-marker {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--border);
+  border: 2px solid var(--code-bg);
+  flex-shrink: 0;
+  position: absolute;
+  left: -24px;
+  top: 14px;
+  z-index: 1;
+  transition: all 0.3s;
+}
+
+.timeline-marker.done {
+  background: #10b981;
+}
+
+.timeline-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+  padding-left: 8px;
+}
+
+.timeline-label {
+  font-size: 14px;
+  color: var(--text-h);
+}
+
+.timeline-time {
+  font-size: 13px;
+  font-family: var(--mono);
+  color: var(--text);
+}
+
+.timing-note {
+  margin-top: 20px;
+  padding: 16px;
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--accent) 10%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+.timing-note strong {
+  color: var(--accent);
+}
+
+/* ── Dark mode support ── */
+@media (prefers-color-scheme: dark) {
+  .streaming-card,
+  .streaming-demo,
+  .timing-viz {
+    background: var(--code-bg);
+  }
+
+  .demo-panel {
+    background: var(--code-bg);
+  }
+
+  .demo-response {
+    background: var(--bg);
+  }
+
+  .demo-header,
+  .demo-insight {
+    background: var(--bg);
+  }
+}
